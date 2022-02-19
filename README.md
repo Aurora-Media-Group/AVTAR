@@ -1,7 +1,7 @@
 ## AVTAR - Your aviation METAR, anytime, anywhere
 This project was created during HackNotts21 (Feb 12th - 13th, 2022) at University of Nottingham.
-JS, React components, API data and Twilio integration - Umar Farooq
-Tailwind CSS integration and marketing - Alex Rollin
+JS, React components, API data and Twilio integration - Umar Farooq  
+Tailwind CSS integration and marketing - Alex Rollin  
 CSS and Logo - Cactric
 
 ## Inspiration

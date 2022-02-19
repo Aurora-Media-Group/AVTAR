@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+## AVTAR - Your aviation METAR, anytime, anywhere
+This project was created during HackNotts21 (Feb 12th - 13th, 2022) at University of Nottingham.
+JS, React components, API data and Twilio integration - Umar Farooq
+Tailwind CSS integration and marketing - Alex Rollin
+CSS and Logo - Cactric
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Inspiration
 
-## Available Scripts
+Pilots require to know the conditions of the airport before making a decision on where they fly, how they fly etc... This could be weather, notams etc... We wanted to create a web app and Twilio app that would make it easier and more accessible to find this information, quick and easy.
 
-In the project directory, you can run:
+## What it does
 
-### `npm start`
+Upon loading the website, it prompts for permission to your location. Once accepted, lat and lon details are passed along to the API which finds the closest airport to your location. This will then show specific data about the airport (decoded METAR), such as the temperature, dew point, wind speed and direction..... You have the option to type an ICAO for an airport to bring up the data for that airport too. This information is useful to pilots when they are wanting to check flight conditions. We have also incorporated Twilio and Discord.js into our application (for the flight simulation community). You can send a message to our number, currently +447700155872, with the body as the ICAO, e.g "EGCC", and you will receive a text message back with the decoded METAR information.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## How we built it
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+To build this project we used React.js, a JavaScript framework. For the Twilio server we have used Node.js with express.js. For the discord bot, we used Discord.js.
 
-### `npm test`
+## Challenges we ran into
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+One of the issues we faced was related to asynchronous functions. We wanted to use our data after a certain point in the program however, due to the nature of the component, it would render other things before what we wanted, which meant that we had to find a way around it. Twilio would not allow us to take the body of the request and input it back into out API (the users input) We fixed this by making sure express was using urlencoded.
 
-### `npm run build`
+## Accomplishments that we're proud of
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+It took a while to get the API to respond with any useful information at the start. This is at the core of our web app and took the most time to get working.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## What we learned
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To find a way around our async problem, we used .then promises to make sure that we have control over our layout and order of the code. We deliberately did not use async and await functions as we are aiming for the hackiest hack award, therefore using nested .then statements seems like a way to enter into that part of the hackathon.
 
-### `npm run eject`
+## What's next for AVTAR
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+We are thinking that we can expand to multiple different platforms to become more accessible
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Built With
+JavaScript, React.js, Express.js, Node.js, Twilio and [AVWX](https://avwx.docs.apiary.io/#)
+HTTPS is required for API access

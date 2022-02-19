@@ -1,0 +1,169 @@
+.avtarinfo{
+    font-size: 18pt;
+    border: 2px;
+    border-style: solid;
+    border-radius: 0.5em;
+    border-color: #444;
+    box-shadow: 5px 5px 5px 0 #00000050;
+    padding: 5%;
+}
+
+.avtarlogo {
+    display: inline-block;
+    position:static;
+    width: 100%;
+}
+
+.logodiv {
+    width: 20%;
+    height: 10%;
+    display: inline-block;
+}
+
+.topbit {
+    width: calc(100% - 2rem);
+    margin-top: 5%;
+    margin-left: 2rem;
+}
+
+.tostext {
+    font-family: "Fira Sans", "Comic Sans MS", sans-serif;
+    font-size: 12pt;
+    margin-bottom: 2%;
+}
+
+.navlink {
+    color: #303366;
+    font-size: 10pt;
+    text-decoration: underline;
+    width: fit-content;
+}
+
+.navlink:visited {
+    color: #503066;
+}
+
+.airporttext {
+    font-size: 18pt;
+    text-align: right;
+    display: inline-block;
+    width: 100%;
+    padding-right: 2rem;
+}
+
+.airportdiv {
+    width: 79%;
+    display: inline-block;
+}
+
+.airportname {
+    font-size: 22pt;
+    font-weight: bold;
+}
+
+.icao-search {
+    width: 100%;
+    color: #4a5568;
+    background-color: white;
+}
+
+.loading-div {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.loading-heading {
+    font-size: 32pt;
+}
+
+.versionnumber {
+    color: #666;
+    font-size: 10pt;
+    margin-left: 2%;
+    margin-bottom: 2%;
+    float: left;
+}
+
+@keyframes youspinmerightround {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(359deg);}
+}
+
+.versionnumber:hover {
+    animation-name: youspinmerightround;
+    animation-duration: 1s;
+    animation-delay: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes jankfade {
+    0% {color: white;}
+    25% {color: white;}
+    100% {color: black;}
+}
+
+.locationjank {
+    animation-name: jankfade;
+    animation-duration: 20s;
+    width: 100%;
+    font-size: 12pt;
+    text-align: center;
+}
+
+.tosdiv {
+    float: left;
+    width: fit-content;
+    margin-left: 2%;
+    margin-bottom: 2%;
+    font-size: 10pt;
+}
+
+.icao-form {
+    width: 100%;
+}
+
+.smsexplaindiv {
+    color: #666;
+    font-size: 10pt;
+    margin-left: 2%;
+    margin-bottom: 2%;
+    float: left;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        color: #fff !important;
+        background-color: #1b1b1b;
+    }
+
+    .icao-search {
+        color: aliceblue;
+        background-color: black;
+        border-color: #1b1b1b !important;
+    }
+
+    .navlink {
+        color: #43488f;
+    }
+
+    .navlink:visited {
+        color: #714491;
+    }
+
+    .versionnumber {
+        color: #8f8f8f;
+    }
+
+    .smsexplaindiff {
+        color: #8f8f8f;
+    }
+
+    @keyframes jankfade {
+        0% {color: #1b1b1b;}
+        25% {color: #1b1b1b;}
+        100% {color: white;}
+    }
+}
